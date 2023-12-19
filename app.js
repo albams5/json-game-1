@@ -1,12 +1,12 @@
+import { elements } from './domReferences.js';
+
 function getMandatoryInput(){
-    const username = document.querySelector("#input-username");
-    const usernameValue = username.value;
+    const {usernameInput, playerName, buttonStart}= elements;
+    const usernameValue = usernameInput.value;
 
     if(!usernameValue){
         alert("ingresa username");
     } else {
-        const playerName = document.getElementById("player-name");
-        const buttonStart = document.getElementById("button-start");
         playerName.classList.add("hide");
         buttonStart.classList.remove("hide");
     }
@@ -14,40 +14,34 @@ function getMandatoryInput(){
 document.getElementById("start-game").addEventListener("click", getMandatoryInput);
 
 function startGame(){
-    showForm();
+    const {clickHereBtn, gameDisplayBtn, yourScore, totalClicks, buttonStart} = elements;
+    showForm(buttonStart, gameDisplayBtn);
     let result = 0;
     const getClicks = () => {
         result++;
         console.log("hola", result);
     };
-    const clickHere = document.getElementById("click-here-btn");
-    clickHere.addEventListener("click", getClicks);
+    clickHereBtn.addEventListener("click", getClicks);
     setTimeout(()=> {
-        clickHere.removeEventListener("click", getClicks);
-        const buttonToGame = document.getElementById("game-display");
-        buttonToGame.classList.add("hide");
-        const yourScore = document.getElementById("your-score");
+        clickHereBtn.removeEventListener("click", getClicks);
+        gameDisplayBtn.classList.add("hide");
         yourScore.classList.remove("hide");
-        document.getElementById("total-clicks").textContent = result;
+        totalClicks.textContent = result;
     }, 10000);
 }
 
 document.getElementById("game-button").addEventListener("click", startGame);
 
 function goBacktoStart(){
-    const playerName = document.getElementById("player-name");
-    const yourScore = document.getElementById("your-score");
+    const {playerName, yourScore, usernameInput} = elements;
     yourScore.classList.add("hide");
     playerName.classList.remove("hide");
-    document.querySelector("#input-username").value = "";
-     
+    usernameInput.value = "";
 }
 document.getElementById("play-again-btn").addEventListener("click", goBacktoStart);
 
 
-function showForm(){
-    const buttonStart = document.getElementById("button-start");
-    const buttonToGame = document.getElementById("game-display");
+function showForm(buttonStart, gameDisplayBtn){
     buttonStart.classList.add("hide");
-    buttonToGame.classList.remove("hide");   
+    gameDisplayBtn.classList.remove("hide");
 }
