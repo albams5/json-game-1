@@ -15,28 +15,28 @@ document.getElementById("start-game").addEventListener("click", getMandatoryInpu
 
 function startGame(){
     showForm();
+    let result = 0;
+    const getClicks = () => {
+        result++;
+        console.log("hola", result);
+    };
     const clickHere = document.getElementById("click-here-btn");
-    let count = 0;
-    clickHere.addEventListener("click", ()=>{
-        getClicks(count)
-    });
-    setTimeout(startTimer, 10000);
-}
-document.getElementById("game-button").addEventListener("click", startGame);
+    clickHere.addEventListener("click", getClicks);
+    setTimeout(()=> {
+        clickHere.removeEventListener("click", getClicks);
+        const buttonToGame = document.getElementById("game-display");
+        buttonToGame.classList.add("hide");
+        const yourScore = document.getElementById("your-score");
+        yourScore.classList.remove("hide");
 
-function getClicks(count){
-    ++count;
-    console.log("hola", count);
+    }, 10000);
 }
+
+document.getElementById("game-button").addEventListener("click", startGame);
 
 function showForm(){
     const buttonStart = document.getElementById("button-start");
     const buttonToGame = document.getElementById("game-display");
     buttonStart.classList.add("hide");
-    buttonToGame.classList.remove("hide");
-    
-}
-
-function startTimer(){
-
+    buttonToGame.classList.remove("hide");   
 }

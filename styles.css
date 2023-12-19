@@ -3,7 +3,14 @@ body{
 }
 h1{
     text-align: center;
+    color: white;
+    font-weight: bold;
 
+}
+
+h3{
+    color: white;
+    font-weight: bold;
 }
 .div-padre{
     display: flex;
@@ -13,11 +20,15 @@ h1{
 #player-name, #user-scores{
     background-color: rgb(122, 157, 255);
     padding: 1rem;
+    border-radius: 8px;
 }
 .button-initial{
     padding: 0.5rem 2rem;
-    background-color:blue;
+    background-color:rgb(4, 4, 53);
     color: white;
+    font-weight: bold;
+    margin-top: 4rem;
+    border-radius: 8px;
 }
 .block{
     display: block;
@@ -45,5 +56,12 @@ h1{
     flex-basis: 60%;
     text-align: center;
     background-color: rgb(122, 157, 255);
-    height: 15vh;
+    border-radius: 8px;
+    height: 10rem;
+}
+
+.click-btn{
+    width: 12rem;
+    height: 4rem;
+    
 }
