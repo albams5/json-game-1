@@ -28,11 +28,22 @@ function startGame(){
         buttonToGame.classList.add("hide");
         const yourScore = document.getElementById("your-score");
         yourScore.classList.remove("hide");
-
+        document.getElementById("total-clicks").textContent = result;
     }, 10000);
 }
 
 document.getElementById("game-button").addEventListener("click", startGame);
+
+function goBacktoStart(){
+    const playerName = document.getElementById("player-name");
+    const yourScore = document.getElementById("your-score");
+    yourScore.classList.add("hide");
+    playerName.classList.remove("hide");
+    document.querySelector("#input-username").value = "";
+     
+}
+document.getElementById("play-again-btn").addEventListener("click", goBacktoStart);
+
 
 function showForm(){
     const buttonStart = document.getElementById("button-start");
