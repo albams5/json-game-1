@@ -14,13 +14,12 @@ h1{
     background-color: rgb(122, 157, 255);
     padding: 1rem;
 }
-#start-game{
+.button-initial{
     padding: 0.5rem 2rem;
     background-color:blue;
     color: white;
-    margin: 2rem auto;
 }
-.username{
+.block{
     display: block;
     margin: auto;
 }
@@ -32,4 +31,19 @@ h1{
 #user-scores{
     flex-basis: 25%;
     text-align: center;
+}
+
+.username-class{
+    margin-bottom: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
+.show-button{
+    flex-basis: 60%;
+    text-align: center;
+    background-color: rgb(122, 157, 255);
+    height: 15vh;
 }

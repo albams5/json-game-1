@@ -12,25 +12,27 @@
         <div id="player-name">
             <h2>Choose a username</h2>
             <p>Username</p>
-            <input class="username" type="text">
-            <button class="username" id="start-game">Start</button>
+            <input id="input-username" class="block username-class" type="text" required>
+            <input type="submit" class="block button-initial" id="start-game" value="Start">
+            </div>
+            <div class="hide show-button" id="button-start">
+                <button id="game-button" class="button-initial">Start Game</button>
+            </div>
+            <div class="hide show-button" id="game-display">
+                <button id="click-here-btn" class="button-initial">Click here</button>
             </div>
             <div id="user-scores">
                 <h3>User scores</h3>
             </div>
     </div>
     
-    <!-- <div id="start-game">
-        <button>Start Game</button>
-    </div>
-    <div id="game-display">
-        <button>Click here</button>
-    </div>
+    <!--
     <div id="your-score">
         <h2>Your Score</h2>
         <p>Your 10 seconds are done!</p>
         <p>You have made 0 clicks</p>
         <button>Play again</button>
-    </div> -->
+    </div>  -->
+    <script src="app.js"></script>
 </body>
 </html>
