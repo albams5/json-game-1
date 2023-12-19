@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Click Game</h1>
-    <div id="user-scores">
-        <h3>User scores</h3>
+    <div class="div-padre">
+        <div id="player-name">
+            <h2>Choose a username</h2>
+            <p>Username</p>
+            <input class="username" type="text">
+            <button class="username" id="start-game">Start</button>
+            </div>
+            <div id="user-scores">
+                <h3>User scores</h3>
+            </div>
     </div>
-    <div id="player-name">
-        <h2>Choose a username</h2>
-        <p>Username</p>
-        <input type="text">
-        <button id="start-game">Start</button>
-    </div>
-    <div id="start-game">
+    
+    <!-- <div id="start-game">
         <button>Start Game</button>
     </div>
     <div id="game-display">
@@ -27,6 +31,6 @@
         <p>Your 10 seconds are done!</p>
         <p>You have made 0 clicks</p>
         <button>Play again</button>
-    </div>
+    </div> -->
 </body>
 </html>
