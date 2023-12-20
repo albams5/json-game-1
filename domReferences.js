@@ -6,4 +6,5 @@ export const elements = {
     gameDisplayBtn: document.getElementById("game-display"),
     yourScore: document.getElementById("your-score"),
     totalClicks: document.getElementById("total-clicks"),
+    userScores: document.getElementById("user-scores")
   };
