@@ -33,6 +33,12 @@ function startGame(){
     const getClicks = () => {
         result++;
         console.log("hola", result);
+        const randomNumber = Math.floor(Math.random()*5+1);
+        if(clickHereBtn.classList[2]){
+            clickHereBtn.classList.remove(clickHereBtn.classList[2]);
+        }
+        clickHereBtn.classList.add(`clase-${randomNumber}`);
+        console.log(clickHereBtn.classList);
     };
     clickHereBtn.addEventListener("click", getClicks);
     setTimeout(()=> {
@@ -48,6 +54,7 @@ function startGame(){
         arrayWinners.push(objeto);
         localStorage.setItem("arrayWinners", JSON.stringify(arrayWinners));
     }, 10000);
+
 }
 
 document.getElementById("game-button").addEventListener("click", startGame);
