@@ -7,8 +7,7 @@ function getMandatoryInput(){
     if(!usernameValue){
         alert("ingresa username");
     } else {
-        playerName.classList.add("hide");
-        buttonStart.classList.remove("hide");
+        showForm(playerName, buttonStart);
     }
 }
 document.getElementById("start-game").addEventListener("click", getMandatoryInput);
@@ -24,8 +23,7 @@ function startGame(){
     clickHereBtn.addEventListener("click", getClicks);
     setTimeout(()=> {
         clickHereBtn.removeEventListener("click", getClicks);
-        gameDisplayBtn.classList.add("hide");
-        yourScore.classList.remove("hide");
+        showForm(gameDisplayBtn, yourScore);
         totalClicks.textContent = result;
     }, 10000);
 }
@@ -34,14 +32,13 @@ document.getElementById("game-button").addEventListener("click", startGame);
 
 function goBacktoStart(){
     const {playerName, yourScore, usernameInput} = elements;
-    yourScore.classList.add("hide");
-    playerName.classList.remove("hide");
+    showForm(yourScore, playerName);
     usernameInput.value = "";
 }
 document.getElementById("play-again-btn").addEventListener("click", goBacktoStart);
 
 
-function showForm(buttonStart, gameDisplayBtn){
-    buttonStart.classList.add("hide");
-    gameDisplayBtn.classList.remove("hide");
+function showForm(sectiontoHide, sectiontoShow){
+    sectiontoHide.classList.add("hide");
+    sectiontoShow.classList.remove("hide");
 }
